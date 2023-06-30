@@ -1,0 +1,25 @@
+.calculator {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+}
+
+.calculator input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.calculator button {
+  width: 48%;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.calculator button:last-child {
+  width: 100%;
+}

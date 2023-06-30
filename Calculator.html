@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    .calculator {
+      width: 250px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+      margin: 0 auto;
+    }
+
+    .calculator input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    .calculator button {
+      width: 48%;
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    .calculator button:last-child {
+      width: 100%;
+    }
+  </style>
+</head>
+ <script>
+    function appendToResult(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+
+    function calculate() {
+      const expression = document.getElementById('result').value;
+      let result;
+      try {
+        if (isValidExpression(expression)) {
+          result = evaluateExpression(expression);
+        } else {
+          throw new Error('Invalid expression');
+        }
+      } catch (error) {
+        result = 'Error';
+      }
+      document.getElementById('result').value = result;
+    }
+
+    function isValidExpression(expression) {
+      // Use regular expression or custom logic to validate the expression
+      // Here's a simple example that checks if the expression contains only digits, operators, and parentheses
+      const regex = /^[0-9()+\-*\/\s]+$/;
+      return regex.test(expression);
+    }
+
+    function evaluateExpression(expression) {
+      // Perform manual parsing and evaluation of the expression
+      // You can use libraries like math.js for more advanced parsing and evaluation
+      return eval(expression);
+    }
+  </script>
+
+</html>
